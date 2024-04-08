@@ -22,9 +22,27 @@ h1 {
     padding: 20px;
 }
 
+
 .project {
     width: 300px;
     margin: 20px;
     border: 1px solid #ccc;
     padding: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project::before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* Maintain aspect ratio (1:1 for square) */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Ensure the image covers the entire container */
 }
